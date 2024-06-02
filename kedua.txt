@@ -1,0 +1,48 @@
+CREATE DATABASE Koperasi_simpan_pinjam;
+CREATE TABLE ANGGOTA(
+Id INT AUTO_INCREMENT PRIMARY KEY,
+nama VARCHAR(50) NOT NULL,
+alamat TEXT NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE,
+no_telp VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE SIMPANAN(
+Id INT PRIMARY KEY AUTO_INCREMENT,
+customer_nama VARCHAR(225) NOT NULL,
+account_type VARCHAR(50) NOT NULL,
+balance DECIMAL(10,2) NOT NULL DEFAULT 0,
+opening_date DATE NOT NULL
+);
+
+CREATE TABLE Pinjaman(
+id_pinjaman INT PRIMARY KEY AUTO_INCREMENT,
+nama CHAR(50),
+tanggal_pinjaman DATE,
+jumlah_pinjaman DECIMAL,
+status_pinjaman ENUM('berhenti','aktif','selesai')
+);
+
+CREATE TABLE transaksi (
+id_anggota INT AUTO_INCREMENT PRIMARY KEY, 
+nama_anggota VARCHAR (100), 
+tanggal_peminjaman DATE, 
+jumlah_pinjaman DECIMAL, 
+jangka_waktu_pinjaman INT,
+besar_angsuran DECIMAL,
+tanggal_pembayaran DATE,
+status_pembayaran ENUM('sudah','belum')
+);
+
+CREATE TABLE administrasi (
+id_anggota INT AUTO_INCREMENT PRIMARY KEY, 
+nama_anggota VARCHAR (100), 
+tanggal_peminjaman DATE, 
+jumlah_pinjaman DECIMAL, 
+jangka_waktu_pinjaman INT,
+besar_angsuran DECIMAL,
+tanggal_pembayaran DATE,
+status_pembayaran ENUM('sudah','belum')
+);
+
+
