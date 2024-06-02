@@ -1,0 +1,17 @@
+INSERT INTO tblprodi
+(kodeprodi,prodi)
+VALUES('KI','KIMIA')
+
+INSERT INTO tblprodi
+(kodeprodi,prodi)
+VALUES('SI','SISTEM INFORMASI')
+
+INSERT INTO tblprodi
+(kodeprodi,prodi)
+VALUES('BI','BIOLOGI')
+
+INSERT INTO tblprodi
+(kodeprodi,prodi)
+VALUES('DS','DATA SAINS')
+
+SELECT * FROM  tblprodi
