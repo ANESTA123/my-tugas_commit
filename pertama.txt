@@ -1,4 +1,4 @@
-CREATE DATABASE dbprauas_2371020054;
+CREATE DATABASE dbprauas
 
 CREATE TABLE tblanggota
 (id_anggota VARCHAR(4) NOT NULL,
