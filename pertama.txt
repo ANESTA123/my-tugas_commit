@@ -1,0 +1,77 @@
+CREATE DATABASE dbprauas_2371020054;
+
+CREATE TABLE tblanggota
+(id_anggota VARCHAR(4) NOT NULL,
+nama VARCHAR(30) NOT NULL,
+PRIMARY KEY (id_anggota));
+
+CREATE TABLE tblbuku
+(kodebuku VARCHAR(5) NOT NULL,
+judul VARCHAR(30) NOT NULL,
+pengarang INT);
+
+CREATE TABLE tblpinjam
+(no_pinjam VARCHAR(10) NOT NULL,
+kodebuku VARCHAR(5) NOT NULL,
+id_anggota INT);
+
+ALTER TABLE tblanggota
+ADD kota VARCHAR(30) AFTER nama;
+
+ALTER TABLE tblanggota
+ADD nohp VARCHAR(12) AFTER alamat;
+
+ALTER TABLE tblanggota
+ADD jenis_kelamin INT AFTER nohp;
+
+ALTER TABLE tblbuku
+ADD tahun_terbit VARCHAR(4) AFTER judul;
+
+ALTER TABLE tblbuku
+ADD keluar INT;
+
+ALTER TABLE tblpinjam
+ADD tgl_pinjam DATE AFTER kodebuku;
+
+ALTER TABLE tblpinjam
+ADD tgl_kembali DATE AFTER tgl_pinjam;
+
+ALTER TABLE tblpinjam
+ADD jml_pinjam INT AFTER tgl_kembali;
+
+ALTER TABLE tblpinjam
+ADD PRIMARY KEY(no_pinjam);
+
+ALTER TABLE tblpinjam
+REFERENCES tblanggota(id_anggota);
+
+ALTER TABLE tblpinjam
+REFERENCES tblbuku(kode_buku)
+
+ALTER TABLE tblanggota
+CHANGE jenis_kelamin gender CHAR(2)
+
+ALTER TABLE tblanggota
+CHANGE alamat kota VARCHAR(15)
+
+ALTER TABLE tblpinjam
+CHANGE id_anggota id_anggota VARCHAR(4)
+
+ALTER TABLE tblbuku
+CHANGE judul judul VARCHAR(30)
+
+ALTER TABLE tblbuku
+CHANGE pengarang pengarang VARCHAR(15)
+
+ALTER TABLE tblanggota
+CHANGE nama nama VARCHAR(30)
+
+ALTER TABLE tblanggota
+DROP COLUMN nohp
+
+ALTER TABLE tblbuku
+DROP COLUMN STATUS,
+DROP COLUMN keluar
+
+ALTER TABLE tblbuku
+ADD COLUMN penerbit VARCHAR(15)
